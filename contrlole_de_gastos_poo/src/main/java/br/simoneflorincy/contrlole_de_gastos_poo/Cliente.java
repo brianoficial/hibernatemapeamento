@@ -25,7 +25,7 @@ public class Cliente implements Serializable {
     @Column(name = "cd_cliente")
     @Id
             
-    Integer codCLiente;
+    Integer codCliente;
     @Column(name = "cod_identificao")
     private Integer codIdentificacao;
     @Column(name = "ds_email")
@@ -41,7 +41,7 @@ public class Cliente implements Serializable {
             cascade = CascadeType.REMOVE,
             fetch = FetchType.EAGER)
     private Endereco enderecoDoCliente;
-    @Column
+    @Column(name="tp_visivel")
     Character visivel;
 
     /**

@@ -6,12 +6,39 @@
 package br.simoneflorincy.contrlole_de_gastos_poo;
 
 import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author User
  */
+@Entity
+@Table(name = "endereco")
 public class Endereco implements Serializable {
+    
+    @Id
+    @Column(name = "cd_endereco")
+    Integer codEndereco;
+    @Column(name = "nm_bairro")
+    private String bairro;
+    @Column(name = "nm_cidade")
+    private String cidade;
+    @Column(name = "ds_complemento")
+    private String complemento;
+    @Column(name = "nr_casa")
+    private String numero;
+    @Column(name = "nm_rua")
+    private String rua;
+    @Column
+    private String telefone1;
+    @Column
+    private String telefone2;
+    @Column(name="ds_cep")
+    Character cep;
+    
 
     /**
      * @return the bairro
@@ -30,14 +57,14 @@ public class Endereco implements Serializable {
     /**
      * @return the cep
      */
-    public String getCep() {
+    public Character getCep() {
         return cep;
     }
 
     /**
      * @param cep the cep to set
      */
-    public void setCep(String cep) {
+    public void setCep(Character cep) {
         this.cep = cep;
     }
 
@@ -124,12 +151,5 @@ public class Endereco implements Serializable {
     public void setTelefone2(String telefone2) {
         this.telefone2 = telefone2;
     }
-    private String bairro;
-    private String cep;
-    private String cidade;
-    private String complemento;
-    private String numero;
-    private String rua;
-    private String telefone1;
-    private String telefone2;
+
 }
